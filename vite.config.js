@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const base = process.env.GITHUB_ACTIONS === 'true'
+  ? '/Interest_Calculator/'
+  : '/'
+
 export default defineConfig({
-  base: '/Interest_Calculator/',
+  base,
   plugins: [react()]
 })
